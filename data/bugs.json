@@ -1,0 +1,30 @@
+[
+  {
+    "_id": "1NF1N1T3",
+    "title": "Infinite Loop Detected",
+    "description": "The app keeps processing the same request forever.",
+    "severity": 4,
+    "createdAt": 1542107359454
+  },
+  {
+    "_id": "K3YB0RD",
+    "title": "Keyboard Not Found",
+    "description": "Keyboard input is not detected on the form.",
+    "severity": 3,
+    "createdAt": 1542107359455
+  },
+  {
+    "_id": "C0FF33",
+    "title": "404 Coffee Not Found",
+    "description": "The coffee endpoint returns an empty response.",
+    "severity": 2,
+    "createdAt": 1542107359456
+  },
+  {
+    "_id": "G0053",
+    "title": "Unexpected Response",
+    "description": "The server response does not match the expected format.",
+    "severity": 1,
+    "createdAt": 1542107359457
+  }
+]
