@@ -13,7 +13,7 @@ export function BugDetails() {
         bugService.getById(bugId)
             .then(bug => setBug(bug))
             .catch(err => showErrorMsg(`Cannot load bug`, err))
-    }, [bugId])
+    }, [])
 
     return <div className="bug-details main-content">
         <h2>Bug Details</h2>
@@ -24,8 +24,6 @@ export function BugDetails() {
                 <h3>{bug.title}</h3>
                 <p className="severity">Severity: <span>{bug.severity}</span></p>
                 <p>{bug.description || 'No description provided.'}</p>
-                {bug.creator && <p>Reported by {bug.creator.fullname}</p>}
-                {!!(bug.labels && bug.labels.length) && <p>Labels: {bug.labels.join(', ')}</p>}
             </div>
         }
         <button><Link to="/bug">Back to List</Link></button>
