@@ -1,0 +1,38 @@
+.auth-page {
+    max-width: 24rem;
+}
+
+.auth-page .auth-mode {
+    display: flex;
+    gap: 0.5rem;
+    margin-block-end: 1rem;
+}
+
+.auth-page .auth-mode button[aria-pressed='true'] {
+    background-color: var(--bg2);
+    color: var(--clr-txt-light);
+}
+
+.auth-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.auth-page label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.user-index table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-index th,
+.user-index td {
+    text-align: start;
+    padding: 0.5rem;
+    border-block-end: 1px solid var(--gray2);
+}

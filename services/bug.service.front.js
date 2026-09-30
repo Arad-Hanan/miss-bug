@@ -6,7 +6,7 @@ export const bugService = {
     getDefaultFilter
 }
 
-function query(filterBy) {
+function query(filterBy = {}) {
     const queryParams = new URLSearchParams(filterBy)
     return fetch(`/api/bug?${queryParams}`)
         .then(_checkResponse)
@@ -20,18 +20,16 @@ function getById(bugId) {
 }
 
 function remove(bugId) {
-    return fetch(`/api/bug/${bugId}/remove`)
+    return fetch(`/api/bug/${bugId}`, { method: 'DELETE' })
         .then(_checkResponse)
 }
 
 function save(bug) {
-    const queryParams = new URLSearchParams({
-        id: bug._id || '',
-        title: bug.title || '',
-        description: bug.description || '',
-        severity: bug.severity || 0
+    return fetch(bug._id ? `/api/bug/${bug._id}` : '/api/bug', {
+        method: bug._id ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(bug)
     })
-    return fetch(`/api/bug/save?${queryParams}`)
         .then(_checkResponse)
         .then(res => res.json())
 }
@@ -42,5 +40,5 @@ function _checkResponse(res) {
 }
 
 function getDefaultFilter() {
-    return { txt: '', minSeverity: 0 }
+    return { txt: '', minSeverity: 0, labels: '', sortBy: '', sortDir: 1, pageIdx: 0 }
 }

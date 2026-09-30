@@ -1,0 +1,10 @@
+[
+  {
+    "_id": "ADMIN01",
+    "username": "admin",
+    "fullname": "MissBug Admin",
+    "salt": "missbug-admin-salt",
+    "passwordHash": "69aaaab9ef39d5fb1fc2d1be51799da3d062cef0d873ccde4c8ea9186efba824d0349fb79c49e325a1479e435adc92ebf9faf17a9b9682e1ffc79284e6d5a1d6",
+    "isAdmin": true
+  }
+]
